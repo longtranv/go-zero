@@ -55,4 +55,5 @@ func main() {
 	fs := http.FileServer(http.Dir(c.FileDir))
 	http.Handle(c.FilePath, http.StripPrefix(c.FilePath, forChksumHandler(path.Join(c.FileDir, filename), fs)))
 	logx.Must(http.ListenAndServe(c.ListenOn, nil))
+	logx.Info("haha")
 }
